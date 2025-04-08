@@ -1,0 +1,175 @@
+/* Layout Geral */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f5;
+    color: #333;
+    text-align: center;
+    font-size: 16px; /* Ampliado o tamanho da fonte global */
+}
+
+/* Centralizar Página e Reduzir Largura Máxima */
+.container {
+    max-width: 700px; /* Mantém a largura geral da página */
+    margin: 0 auto; /* Centraliza na página */
+    padding: 10px;
+}
+
+/* Centralização */
+.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Logo */
+#logo, #logoSecondary {
+    width: 300px; /* Compactado para melhor ajuste */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Botões */
+.button-primary {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px; /* Aumentado para melhorar o espaçamento interno */
+    font-size: 18px; /* Ampliado para melhorar a legibilidade */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block; /* Garante que seja tratado como um bloco */
+    margin: 20px auto; /* Adiciona espaçamento e centraliza horizontalmente */
+}
+
+.button-primary:hover {
+    background-color: #45a049;
+}
+
+/* Centralizar os formulários com botões */
+#loginForm, #orderForm {
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+}
+
+/* Formulários */
+.form-container {
+    width: 80%; /* Compactado para melhor ajuste */
+    max-width: 400px; /* Limite de largura do formulário */
+    margin: 20px auto;
+    background-color: white;
+    padding: 15px; /* Aumentado para espaçamento interno */
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    font-size: 16px; /* Fonte ampliada para as descrições fora das caixas */
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 18px; /* Aumentado para melhorar a legibilidade das designações */
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px; /* Aumentado para espaçamento interno */
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; /* Fonte ampliada */
+    box-sizing: border-box;
+}
+
+/* Organização Horizontal */
+.inline-fields {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.inline-fields div {
+    flex: 1;
+}
+
+.inline-fields input {
+    width: 100%;
+}
+
+/* Campos de Texto Grandes */
+textarea.large-textbox {
+    height: 100px; /* Ampliado para acomodar mais texto */
+    resize: none;
+}
+
+/* Tabelas */
+.table-container {
+    margin-top: 20px;
+    overflow-x: auto; /* Permite a rolagem horizontal caso necessário */
+}
+
+table {
+    width: 100%; /* Utiliza o espaço total da página */
+    max-width: 700px; /* Largura máxima compacta */
+    margin: auto; /* Centraliza na página */
+    border-collapse: collapse;
+    background-color: white;
+    table-layout: auto; /* Ajusta largura com base no conteúdo */
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px; /* Aumentado para espaçamento interno */
+    text-align: left;
+    vertical-align: top; /* Alinha o texto ao topo */
+    font-size: 16px; /* Fonte ampliada */
+}
+
+/* Cabeçalhos da Tabela */
+table th {
+    background-color: #4CAF50; /* Cor do cabeçalho */
+    color: white; /* Texto branco no cabeçalho */
+}
+
+/* Estilizar múltiplas linhas nas descrições */
+td div {
+    margin-bottom: 5px; /* Espaço entre linhas */
+    font-size: 16px; /* Fonte ampliada para descrições fora das caixas */
+}
+
+/* Ajuste Específico para Responsável, Mão de Obra e Data */
+table td:nth-child(3), /* Responsável */
+table td:nth-child(5), /* Mão de Obra */
+table td:nth-child(9) /* Data */ {
+    white-space: nowrap; /* Impede quebra de linha e mantém o texto seguido */
+    overflow: hidden; /* Esconde textos que ultrapassarem o limite */
+    text-overflow: ellipsis; /* Adiciona “...” se o texto for muito longo */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .form-container {
+        width: 95%;
+    }
+
+    table {
+        font-size: 14px; /* Ajustado para telas menores */
+    }
+
+    table td:nth-child(3), /* Responsável */
+    table td:nth-child(5), /* Mão de Obra */
+    table td:nth-child(9) /* Data */ {
+        white-space: normal; /* Ajusta dinamicamente em dispositivos menores */
+        overflow: visible;
+        text-overflow: clip;
+    }
+}

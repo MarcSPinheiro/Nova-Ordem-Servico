@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordens de Serviço</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Página Inicial de Login -->
+    <div id="loginPage" class="centered">
+        <img src="logo_Pinheiro.png" alt="Logo Pinheiro" id="logo">
+        <h1>Bem-vindo as Ordens de Serviço</h1>
+        <form id="loginForm" class="form-container">
+            <label for="username">Nome de Usuário:</label>
+            <input type="text" id="username" placeholder="Pinheiro.iec" required>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" placeholder="******" required>
+
+            <button type="button" id="loginButton" class="button-primary">Entrar</button>
+        </form>
+    </div>
+
+    <!-- Página Secundária -->
+    <div id="mainPage" style="display: none;" class="container">
+        <img src="logo_Pinheiro.png" alt="Logo Pinheiro" id="logoSecondary">
+        <h1>Bem-vindo as Ordens de Serviço</h1>
+        <form id="orderForm" class="form-container">
+            <label for="clientName">Nome do Cliente:</label>
+            <input type="text" id="clientName" required>
+
+            <label for="address">Morada:</label>
+            <input type="text" id="address" required>
+
+            <label for="responsible">Responsável:</label>
+            <select id="responsible" required>
+                <option value="Marco Pinheiro">Marco Pinheiro</option>
+                <option value="Nuno Alves">Nuno Alves</option>
+                <option value="Marcos Figueiredo">Marcos Figueiredo</option>
+            </select>
+
+            <label for="serviceType">Descrição de Serviços:</label>
+            <select id="serviceType" multiple required>
+                <option value="Electricidade">Electricidade</option>
+                <option value="Canalização">Canalização</option>
+                <option value="Climatização">Climatização</option>
+                <option value="Fotovoltaico">Fotovoltaico</option>
+                <option value="VMC">VMC</option>
+            </select>
+
+            <label for="worker">Mão de Obra:</label>
+            <select id="worker" multiple required>
+                <option value="Marco Pinheiro">Marco Pinheiro</option>
+                <option value="Nuno Alves">Nuno Alves</option>
+                <option value="Marcos Figueiredo">Marcos Figueiredo</option>
+            </select>
+
+            <div class="inline-fields">
+                <div>
+                    <label for="hours">Horas de Serviço:</label>
+                    <input type="number" id="hours" required>
+                </div>
+                <div>
+                    <label for="date">Data:</label>
+                    <input type="date" id="date" required>
+                </div>
+            </div>
+
+            <label for="tasks">Descrição de Trabalhos Efetuados:</label>
+            <textarea id="tasks" class="large-textbox" required></textarea>
+
+            <label for="materials">Materiais Aplicados:</label>
+            <textarea id="materials" class="large-textbox" required></textarea>
+
+            <button type="button" id="addOrder" class="button-primary">Adicionar Ordem</button>
+        </form>
+
+        <h2>Ordens Criadas</h2>
+        <div class="table-container">
+            <table id="orderTable">
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Morada</th>
+                        <th>Responsável</th>
+                        <th>Serviços</th>
+                        <th>Mão de Obra</th>
+                        <th>Horas</th>
+                        <th>Trabalhos Efetuados</th>
+                        <th>Materiais Aplicados</th>
+                        <th>Data</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Script JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
